@@ -1,71 +1,55 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text,  TouchableOpacity,  View } from 'react-native';
+import { View, Text, Image, ScrollView, TextInput,StyleSheet } from 'react-native';
 import React, { Component } from 'react'
 
 
-const Greeting = (props) => {
+
+
+const App = () => {
   return (
-    <View style={styles.center}>
-      <Text>Hello {props.name}!</Text>
-    </View>
-  );
-}
-
-
-class App extends Component {
-  state = {
-    count: 0
-  }
-
-  onPress = () => {
-    this.setState({
-      count: this.state.count + 1
-    })
-  }
-  render() {
-  return (
-    <View style={styles.container}>
-      <Greeting name ="Henrique"/>
-      <Greeting name ="Joel"/>
-      <Greeting name ="Lima"/>
-      <Greeting name ="Silva"/>
+    <ScrollView >
       <StatusBar style="auto" />
-      <TouchableOpacity
-         style={styles.button}
-         onPress={this.onPress}
-        >
-         <Text>Click me</Text>
-        </TouchableOpacity>
-        <View>
-          <Text>
-            You clicked { this.state.count } times
-          </Text>
-        </View>
+    <View style={styles.container}>
+      <Text>Some more text</Text>
+      <Image
+        source={{
+          uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
+        }}
+        style={{ width: 200, height: 200 }}
+      />
     </View>
-  );
-}
+    <TextInput
+      style={styles.input}
+      defaultValue="You can type in me"
+    />
+  </ScrollView>
+
+
+);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  container:{
+    marginBottom:10,
+    marginTop:'15%',
+    backgroundColor:'#AAF',   
+    opacity:0.5,
+    margin:5, 
+    padding:15,
+    borderRadius:4,
+    borderColor:'gray',
+    borderWidth:3,
+   
+    
   },
-  center:{
-    display:'flex',
-    alignItems:'center',
-    width:'50%',
-    margin:5,
-    backgroundColor:'#f00'
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10,
-    margin: 10
+  input:{
+    margin:5, 
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    padding:5
   }
 })
+
 
 export default App;
