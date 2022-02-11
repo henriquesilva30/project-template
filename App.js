@@ -1,10 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+
+const Greeting = (props) => {
+  return (
+    <View style={styles.center}>
+      <Text>Hello {props.name}!</Text>
+    </View>
+  );
+}
+
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Greeting name ="Henrique"/>
+      <Greeting name ="Joel"/>
+      <Greeting name ="Lima"/>
+      <Greeting name ="Silva"/>
       <StatusBar style="auto" />
     </View>
   );
@@ -17,4 +30,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  center:{
+    display:'flex',
+    alignItems:'center',
+    width:'50%',
+    margin:5,
+    backgroundColor:'#f00'
+  }
 });
