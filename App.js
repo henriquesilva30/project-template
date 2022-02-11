@@ -1,16 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, Image, ScrollView, TextInput,StyleSheet } from 'react-native';
+import { View, Text, Image, ScrollView, TextInput,StyleSheet, Button } from 'react-native';
 import React, { Component } from 'react'
 
 
 
 
-const App = () => {
+class App extends Component {
+  state = { isHungry: true };
+  render(){
   return (
-    <ScrollView >
-      <StatusBar style="auto" />
-    <View style={styles.container}>
-      <Text>Some more text</Text>
+    <ScrollView style={styles.container} >
+      {/* <StatusBar style="auto" /> */}
+    <View >
+      <Text> Cat name: {this.props.name}</Text>
       <Image
         source={{
           uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
@@ -22,18 +24,45 @@ const App = () => {
       style={styles.input}
       defaultValue="You can type in me"
     />
+    
+    <Text style={{marginTop:15,marginBottom:15}}>
+          I am {this.props.name}, and I am
+          {this.state.isHungry ? " hungry" : " full"}!
+        </Text>
+        <Button
+          onPress={() => {
+            this.setState({ isHungry: false });
+          }}
+          disabled={!this.state.isHungry}
+          title={
+            this.state.isHungry ? "Pour me some milk, please!" : "Thank you!"
+          }
+        />
   </ScrollView>
 
 
 );
 }
+}
+class Cafe extends Component {
+  render() {
+    return (
+      <>
+        <App name="Munkustrap"/>
+        <App name="Spot" />
+      </>
+    );
+  }
+}
+
+
+
 
 const styles = StyleSheet.create({
   container:{
     marginBottom:10,
-    marginTop:'15%',
+    marginTop:15,
     backgroundColor:'#AAF',   
-    opacity:0.5,
     margin:5, 
     padding:15,
     borderRadius:4,
@@ -43,7 +72,6 @@ const styles = StyleSheet.create({
     
   },
   input:{
-    margin:5, 
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
@@ -52,4 +80,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default App;
+export default Cafe;
