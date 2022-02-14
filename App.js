@@ -29,7 +29,7 @@ class App extends Component {
           I am {this.props.name}, and I am
           {this.state.isHungry ? " hungry" : " full"}!
         </Text>
-        <Button
+        <Button  style={styles.button}
           onPress={() => {
             this.setState({ isHungry: false });
           }}
@@ -75,7 +75,10 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
-    padding:5
+    padding:5,
+    backgroundColor:'#FFF',
+    borderRadius:4,
+    paddingLeft:15
   }
 })
 
