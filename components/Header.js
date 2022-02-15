@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
     header: {
    height:60,
    padding:15,
-   backgroundColor:'pink'
+   backgroundColor:'#F99'
   },
   text:{
       color:'#FFF',
       fontSize:23,
-      textAlign:'center'
+      textAlign:'center',
   }
 });
 
