@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Alert,ScrollView } from "react-native";
 import Header from './components/Header';
 import { v4 as uuidv4 } from 'uuid';
 import ListItem from './components/ListItem';
@@ -20,13 +20,26 @@ const App = () => {
     });
   }
 
+  const addItem = text => {
+    if(!text){
+        Alert.alert('Erro','Campo não pode estar vazio', [{text:'Ok'}]);
+    }
+    else{
+      setItems(prevItems => {
+        return [{id: uuidv4(),text},...prevItems];
+      });
+    }
+  }
+
     return (
     <View style={styles.container}>
+      <ScrollView>
       <Header />
-      <AddItem/>
-      <FlatList style={{marginTop:15}} data={items} renderItem={({item}) => <ListItem item={item}
+      <AddItem addItem={addItem}/>
+      <FlatList style={{marginVertical:20,marginHorizontal:15}} data={items} renderItem={({item}) => <ListItem item={item}
       deleteItem={deleteItem}/>}
       />
+      </ScrollView>
     </View>
   );
 };

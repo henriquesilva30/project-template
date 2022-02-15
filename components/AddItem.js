@@ -1,12 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
-import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
-const AddItem = ({title}) => {
+const AddItem = ({title, addItem}) => {
+  const  [text,setText] = useState('');
+
+  const onChange = textValue => setText(textValue);
+
   return (
    <View>
-     <TextInput placeholder="Adicionar artigo" style={styles.input}/>
-     <TouchableOpacity style={styles.btn}>
+     <TextInput placeholder="Adicionar artigo" onChangeText={onChange} value={text} style={styles.input}/>
+     <TouchableOpacity style={styles.btn} onPress={() => {addItem(text); setText('');}} >
        <Text style={styles.btnText}>Adicionar</Text>
      </TouchableOpacity>
    </View>
@@ -36,7 +39,7 @@ btn: {
 btnText:{
     fontSize:20,
     textAlign:'center',
-    color:'black',
+    color:'white',
 }
 });
 
