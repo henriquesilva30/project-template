@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import { StyleSheet, View, FlatList, Alert,ScrollView } from "react-native";
+import { StyleSheet, View, FlatList, Alert,ScrollView, StatusBar } from "react-native";
 import Header from './components/Header';
 import { v4 as uuidv4 } from 'uuid';
 import ListItem from './components/ListItem';
@@ -33,6 +33,7 @@ const App = () => {
 
     return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       <ScrollView>
       <Header />
       <AddItem addItem={addItem}/>
@@ -48,7 +49,6 @@ const App = () => {
 
 const styles = StyleSheet.create({
     container: {
-    marginTop:60,
     flex: 1,
     backgroundColor:'#09F'
   }

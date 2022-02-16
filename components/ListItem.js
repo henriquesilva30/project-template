@@ -11,7 +11,8 @@ const ListItem = ({item, deleteItem}) => {
     <TouchableOpacity style={styles.listItem}>
       <View style={styles.listItemView}> 
       <Text style={styles.listItemText}>{item.text}</Text>
-      <Icon icon='x' style={styles.listItemIcon}  onPress={() => deleteItem(item.id)}/>   
+      <Text style={styles.listItemIcon}  onPress={() => deleteItem(item.id)}>x</Text>   
+      {/* <Icon style={styles.listItemIcon}  onPress={() => deleteItem(item.id)}>x</Icon>   font family error */} 
       {/* <Icon name='remove' size={20} color="firebrick"/>    */}
         </View>
     </TouchableOpacity>
