@@ -6,6 +6,10 @@ import ListItem from './app/components/ListItem';
 import AddItem from './app/components/AddItem';
 import WelcomeScreen from "./app/components/WelcomeScreen";
 import colors from './app/config/colors';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 
 const App = () => {
@@ -50,15 +54,24 @@ const App = () => {
   }
 
     return (
-    // <ScrollView style={styles.container}>
-    //   <StatusBar style="auto" />
-    //   <Header />
-    //   <AddItem addItem={addItem}/>
-    //   <FlatList style={{marginVertical:20,marginHorizontal:15}} scrollEnabled={false} data={items} renderItem={({item}) => <ListItem item={item}
-    //   deleteItem={deleteItem}/>}
-    //   />
-    // </ScrollView>
-    <WelcomeScreen/>
+      <NavigationContainer>
+        <Stack.Navigator>
+        <Stack.Screen name="Loja X "
+        component={WelcomeScreen}
+        />
+         <Stack.Screen name="Artigos"
+        component={Header}
+        />
+     {/* <ScrollView style={styles.container}>
+       <StatusBar style="auto" />
+       <Header />
+       <AddItem addItem={addItem}/>
+       <FlatList style={{marginVertical:20,marginHorizontal:15}} scrollEnabled={false} data={items} renderItem={({item}) => <ListItem item={item}
+       deleteItem={deleteItem}/>}
+       />
+     </ScrollView> */}
+    </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

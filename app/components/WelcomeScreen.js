@@ -11,7 +11,7 @@ function WelcomeScreen(props) {
             <View style={styles.loginBtn}>
                 <Text  style={styles.txt}>Aceder à conta</Text>
             </View>
-            <View style={styles.regBtn}>
+            <View style={styles.regBtn} >
             <Text  style={styles.txt}>Visitar loja</Text>
             </View>
         </ImageBackground>
@@ -40,17 +40,18 @@ const styles = StyleSheet.create({
         backgroundColor:colors.white,
         alignSelf:'center',
         opacity:0.4,
-        bottom:'27%',
-        borderRadius:200
-
+        bottom:'40%',
+        borderRadius:200,
     },
     logo : {
-        width:150,
-        height:150,
+        width:200,
+        height:200,
         alignSelf:'center',
         position:'absolute',
-        bottom:'50%',
-        borderRadius:200
+        bottom:'61%',
+        borderRadius:200,
+        borderWidth:1,
+        borderColor:colors.black,
 
     },
     txt: {
