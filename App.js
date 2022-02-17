@@ -1,12 +1,27 @@
 import React , {useState} from "react";
 import { StyleSheet, View, FlatList, Alert,ScrollView, StatusBar } from "react-native";
-import Header from './components/Header';
+import Header from './app/components/Header';
 import { v4 as uuidv4 } from 'uuid';
-import ListItem from './components/ListItem';
-import AddItem from './components/AddItem';
+import ListItem from './app/components/ListItem';
+import AddItem from './app/components/AddItem';
 
 const App = () => {
   const [items, setItems] = useState([
+    {id:uuidv4(),text:'Eggs' },
+    {id:uuidv4(),text:'Milk' },
+    {id:uuidv4(),text:'Beef' },
+    {id:uuidv4(),text:'Bread' },
+    {id:uuidv4(),text:'Juice' }, 
+    {id:uuidv4(),text:'Eggs' },
+    {id:uuidv4(),text:'Milk' },
+    {id:uuidv4(),text:'Beef' },
+    {id:uuidv4(),text:'Bread' },
+    {id:uuidv4(),text:'Juice' }, 
+    {id:uuidv4(),text:'Eggs' },
+    {id:uuidv4(),text:'Milk' },
+    {id:uuidv4(),text:'Beef' },
+    {id:uuidv4(),text:'Bread' },
+    {id:uuidv4(),text:'Juice' }, 
     {id:uuidv4(),text:'Eggs' },
     {id:uuidv4(),text:'Milk' },
     {id:uuidv4(),text:'Beef' },
@@ -32,16 +47,14 @@ const App = () => {
   }
 
     return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <StatusBar style="auto" />
-      <ScrollView>
       <Header />
       <AddItem addItem={addItem}/>
-      <FlatList style={{marginVertical:20,marginHorizontal:15}} data={items} renderItem={({item}) => <ListItem item={item}
+      <FlatList style={{marginVertical:20,marginHorizontal:15}} scrollEnabled={false} data={items} renderItem={({item}) => <ListItem item={item}
       deleteItem={deleteItem}/>}
       />
-      </ScrollView>
-    </View>
+    </ScrollView>
   );
 };
 
