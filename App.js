@@ -54,24 +54,24 @@ const App = () => {
   }
 
     return (
-      <NavigationContainer>
-        <Stack.Navigator>
-        <Stack.Screen name="Loja X "
-        component={WelcomeScreen}
-        />
-         <Stack.Screen name="Artigos"
-        component={Header}
-        />
-     {/* <ScrollView style={styles.container}>
+      // <NavigationContainer>
+      //   <Stack.Navigator>
+      //   <Stack.Screen name="Loja X "
+      //   component={WelcomeScreen}
+      //   />
+      //    <Stack.Screen name="Artigos"
+      //   component={Header}
+      //   />
+      <ScrollView style={styles.container}>
        <StatusBar style="auto" />
        <Header />
        <AddItem addItem={addItem}/>
        <FlatList style={{marginVertical:20,marginHorizontal:15}} scrollEnabled={false} data={items} renderItem={({item}) => <ListItem item={item}
        deleteItem={deleteItem}/>}
        />
-     </ScrollView> */}
-    </Stack.Navigator>
-    </NavigationContainer>
+     </ScrollView> 
+    // </Stack.Navigator>
+    // </NavigationContainer>
   );
 };
 
@@ -80,7 +80,7 @@ const App = () => {
 const styles = StyleSheet.create({
     container: {
     flex: 1,
-    backgroundColor:colors.white
+    backgroundColor:colors.secondary
   }
 });
 

@@ -37,7 +37,9 @@ btn: {
     margin:5,
     width:'40%',
     alignSelf:'center',
-    borderRadius:100
+    borderRadius:100,
+    borderColor:colors.black,
+    borderWidth:3
 },
 btnText:{
     fontSize:20,
