@@ -4,6 +4,9 @@ import Header from './app/components/Header';
 import { v4 as uuidv4 } from 'uuid';
 import ListItem from './app/components/ListItem';
 import AddItem from './app/components/AddItem';
+import WelcomeScreen from "./app/components/WelcomeScreen";
+import colors from './app/config/colors';
+
 
 const App = () => {
   const [items, setItems] = useState([
@@ -47,14 +50,15 @@ const App = () => {
   }
 
     return (
-    <ScrollView style={styles.container}>
-      <StatusBar style="auto" />
-      <Header />
-      <AddItem addItem={addItem}/>
-      <FlatList style={{marginVertical:20,marginHorizontal:15}} scrollEnabled={false} data={items} renderItem={({item}) => <ListItem item={item}
-      deleteItem={deleteItem}/>}
-      />
-    </ScrollView>
+    // <ScrollView style={styles.container}>
+    //   <StatusBar style="auto" />
+    //   <Header />
+    //   <AddItem addItem={addItem}/>
+    //   <FlatList style={{marginVertical:20,marginHorizontal:15}} scrollEnabled={false} data={items} renderItem={({item}) => <ListItem item={item}
+    //   deleteItem={deleteItem}/>}
+    //   />
+    // </ScrollView>
+    <WelcomeScreen/>
   );
 };
 
@@ -63,7 +67,7 @@ const App = () => {
 const styles = StyleSheet.create({
     container: {
     flex: 1,
-    backgroundColor:'#09F'
+    backgroundColor:colors.white
   }
 });
 

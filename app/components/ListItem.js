@@ -1,9 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-
-
-
-
+import colors from '../config/colors';
 
 const ListItem = ({item, deleteItem}) => {
   return (
@@ -23,10 +20,10 @@ const ListItem = ({item, deleteItem}) => {
 const styles = StyleSheet.create({
     listItem:{
         padding:7,
-        backgroundColor:'#afa',
+        backgroundColor:colors.primary,
         margin:2,
         borderRadius:10,
-        borderColor:'black',
+        borderColor:colors.black,
         borderWidth:2
 
     },
@@ -34,18 +31,18 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        backgroundColor:'white',
+        backgroundColor:colors.white,
         padding:10,
         borderRadius:5
 
     },
     listItemText:{
         fontSize:18,
-        color:'black',
+        color:colors.black,
     },
     listItemIcon:{
       fontSize:20,
-       color:'firebrick',
+       color:colors.delete,
        textAlign:'center',
        width:20,
        height:25

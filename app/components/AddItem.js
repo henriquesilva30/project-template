@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import colors from '../config/colors';
+
 
 const AddItem = ({title, addItem}) => {
   const  [text,setText] = useState('');
@@ -26,11 +28,11 @@ const styles = StyleSheet.create({
     borderRadius:15,
     fontSize:16,
     borderWidth:2,
-    backgroundColor:'#0BF',
-    color:'white'
+    backgroundColor:colors.primary,
+    color:colors.white
 },
 btn: {
-    backgroundColor:'#F99',
+    backgroundColor:colors.secondary,
     padding:10,
     margin:5,
     width:'40%',
@@ -40,7 +42,7 @@ btn: {
 btnText:{
     fontSize:20,
     textAlign:'center',
-    color:'white',
+    color:colors.white,
 }
 });
 
