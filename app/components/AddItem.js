@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     borderRadius:15,
     fontSize:16,
     borderWidth:2,
-    backgroundColor:colors.primary,
-    color:colors.white
+    backgroundColor:colors.white,
+    color:colors.black
 },
 btn: {
     backgroundColor:colors.secondary,

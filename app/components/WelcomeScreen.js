@@ -1,19 +1,19 @@
 import React from 'react';
-import { View, ImageBackground, StyleSheet, Image, Text} from 'react-native';
+import { View, ImageBackground, StyleSheet, Image, Text, Pressable} from 'react-native';
 import colors from '../config/colors';
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation}) {
     return (
         <ImageBackground style={styles.background} source={require('../assets/bg.jpg')}>
             <View style={styles.bglogo}>
             </View>
             <Image style={styles.logo} source={require('../assets/logo.jpg')} />
-            <View style={styles.loginBtn}>
-                <Text  style={styles.txt}>Aceder à conta</Text>
-            </View>
-            <View style={styles.regBtn} >
-            <Text  style={styles.txt}>Visitar loja</Text>
-            </View>
+            <Pressable style={styles.loginBtn}>
+                <Text style={styles.txt} >Aceder à conta</Text> 
+            </Pressable>
+            <Pressable style={styles.regBtn}  onPress={() => navigation.navigate('Home')} >
+            <Text style={styles.txt}>Visitar loja</Text>
+            </Pressable>
         </ImageBackground>
     );
 }
