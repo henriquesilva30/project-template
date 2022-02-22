@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import { View, ImageBackground, StyleSheet, Image, Text, Pressable, Modal, TextInput} from 'react-native';
 import styles from '../config/styles';
 
+
 function WelcomeScreen({ navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
   const  [text,setText] = useState('');

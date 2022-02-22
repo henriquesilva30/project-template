@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from "react-native";
 import styles from '../config/styles';
+
 
 
 const AddItem = ({title, addItem}) => {
@@ -10,7 +11,8 @@ const AddItem = ({title, addItem}) => {
 
   return (
    <View>
-     <TextInput placeholder="Adicionar artigo" onChangeText={onChange} value={text} style={styles.input}/>
+     
+     <TextInput mode="outlined" style={styles.input}   placeholder="Adicionar artigo" onChangeText={onChange} value={text}/>
      <TouchableOpacity style={styles.btn} onPress={() => {addItem(text); setText('');}} >
        <Text style={styles.btnText}>Adicionar</Text>
      </TouchableOpacity>

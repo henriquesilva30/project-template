@@ -22,12 +22,12 @@ home: {
   backgroundColor:colors.secondary
 },
 input:{
-  height:40,
-  padding:10,
+  height:60,
+  padding:20,
   margin:5,
   marginTop:25,
   borderRadius:15,
-  fontSize:16,
+  fontSize:18,
   borderWidth:2,
   backgroundColor:colors.white,
   color:colors.black
