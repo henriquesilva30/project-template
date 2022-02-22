@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import colors from '../config/colors';
 
+
 const ListItem = ({item, deleteItem}) => {
   return (
     <TouchableOpacity style={styles.listItem}>
@@ -9,7 +10,8 @@ const ListItem = ({item, deleteItem}) => {
       <Text style={styles.listItemText}>{item.text}</Text>
       <Text style={styles.listItemIcon}  onPress={() => deleteItem(item.id)}>x</Text>   
       {/* <Icon style={styles.listItemIcon}  onPress={() => deleteItem(item.id)}>x</Icon>   font family error */} 
-      {/* <Icon name='remove' size={20} color="firebrick"/>    */}
+       {/* <Icon name='remove' size={20} color="firebrick"/>    */}
+       {/* <FontAwesomeIcon icon="fa-solid fa-delete-right" /> */}
         </View>
     </TouchableOpacity>
   );

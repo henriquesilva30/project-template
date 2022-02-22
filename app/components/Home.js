@@ -1,9 +1,11 @@
 import React , {useState} from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { StyleSheet, FlatList,ScrollView, StatusBar } from "react-native";
+import { StyleSheet, FlatList, StatusBar } from "react-native";
 import ListItem from './ListItem';
 import AddItem from './AddItem';
 import colors from '../config/colors';
+import { ScrollView } from 'react-native-virtualized-view';
+
 
 const Home = ({title}) => {
     const [items, setItems] = useState([
