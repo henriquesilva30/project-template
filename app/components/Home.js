@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { StyleSheet, FlatList, StatusBar } from "react-native";
 import ListItem from './ListItem';
 import AddItem from './AddItem';
-import colors from '../config/colors';
+import styles from '../config/styles';
 import { ScrollView } from 'react-native-virtualized-view';
 
 
@@ -50,7 +50,7 @@ const Home = ({title}) => {
 
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.home}>
         <StatusBar style="auto" />
         <AddItem addItem={addItem} />
         <FlatList style={{ marginVertical: 20, marginHorizontal: 15 }} scrollEnabled={false} data={items} renderItem={({ item }) => <ListItem item={item}
@@ -61,21 +61,5 @@ const Home = ({title}) => {
 
 
 
-const styles = StyleSheet.create({
-    header: {
-   height:60,
-   padding:15,
-   backgroundColor:colors.primary
-  },
-  text:{
-      color:colors.white,
-      fontSize:23,
-      textAlign:'center',
-  },
-  container: {
-    flex: 1,
-    backgroundColor:colors.secondary
-  }
-});
 
 export default Home;

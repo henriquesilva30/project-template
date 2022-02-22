@@ -1,6 +1,6 @@
 import React , {useState} from 'react';
 import { View, ImageBackground, StyleSheet, Image, Text, Pressable, Modal, TextInput} from 'react-native';
-import colors from '../config/colors';
+import styles from '../config/styles';
 
 function WelcomeScreen({ navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -9,7 +9,7 @@ function WelcomeScreen({ navigation}) {
   const onChange = textValue => setText(textValue);
 
   return (
-        <ImageBackground style={styles.background} source={require('../assets/bg.jpg')}>
+        <ImageBackground style={styles.welcome} source={require('../assets/bg.jpg')}>
             <View style={styles.bglogo}>
             </View>
             <Image style={styles.logo} source={require('../assets/logo.jpg')} />
@@ -53,105 +53,6 @@ function WelcomeScreen({ navigation}) {
     );
 }
 
-const styles = StyleSheet.create({
-    background:{
-        flex:1,
-        justifyContent:'flex-end',
 
-    },
-    input:{
-      height:40,
-      padding:10,
-      margin:5,
-      marginTop:25,
-      borderRadius:15,
-      fontSize:16,
-      borderWidth:2,
-      backgroundColor:colors.white,
-      color:colors.black
-  },
-    loginBtn:{
-        width:'100%',
-        height:70,
-        backgroundColor:colors.primary
-    },
-    regBtn:{
-        width:'100%',
-        height:70,
-        backgroundColor:colors.secondary
-    },
-    bglogo:{
-      width:250,
-      height:250,
-      justifyContent:'center',
-      backgroundColor:colors.white,
-      alignSelf:'center',
-      opacity:0.4,
-      position:'absolute',
-      bottom:'50%',
-      borderRadius:200,
-    },
-    logo : {
-        width:200,
-        height:200,
-        alignSelf:'center',
-        borderRadius:200,
-        borderWidth:1,
-        position:'absolute',
-        bottom:'50%',
-        marginBottom:25,
-        borderColor:colors.black,
-    },
-    txt: {
-        alignSelf:'center',
-        color:colors.white,
-        fontSize:18,
-        top:'35%',
-    },
-    centeredView: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: 22
-    },
-    modalView: {
-      height:300,
-      width:300,
-      opacity:1,
-      margin: 20,
-      backgroundColor: colors.white,
-      borderRadius: 20,
-      padding: 35,
-      alignItems: "center",
-      shadowColor: colors.secondary,
-      shadowOffset: {
-        width: 1,
-        height: 2
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 4,
-      elevation: 5
-    },
-    button: {
-      borderRadius: 20,
-      padding: 10,
-      elevation: 2
-    },
-    buttonOpen: {
-      backgroundColor: 'green',
-    },
-    buttonClose: {
-      backgroundColor: 'red',
-    },
-    textStyle: {
-      color: "white",
-      fontWeight: "bold",
-      textAlign: "center"
-    },
-    modalText: {
-      marginBottom: 15,
-      textAlign: "center"
-    }
-})
 
 export default WelcomeScreen;

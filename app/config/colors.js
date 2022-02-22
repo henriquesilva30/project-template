@@ -3,5 +3,6 @@ export default {
     secondary:'#4ecdc4',
     white:'white',
     black:'black',
-    delete:'firebrick'
+    delete:'firebrick',
+    
 }
