@@ -5,16 +5,16 @@ import styles from '../config/styles';
 
 function WelcomeScreen({ navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
-  const  [text,setText] = useState('');
+  const [modalVisibleReg, setModalVisibleReg] = useState(false);
 
-  const onChange = textValue => setText(textValue);
 
   return (
         <ImageBackground style={styles.welcome} source={require('../assets/bg.jpg')}>
             <View style={styles.bglogo}>
             </View>
             <Image style={styles.logo} source={require('../assets/logo.jpg')} />
-            <Modal
+            {/* Modal Login */}
+            <Modal 
           animationType="fade"
           transparent={true}
           visible={modalVisible}
@@ -24,26 +24,57 @@ function WelcomeScreen({ navigation}) {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Text style={styles.modalText}>Login \  
-              <Text style={styles.modalText}> Registar</Text></Text>
-              <TextInput placeholder="Adicionar artigo" onChangeText={onChange} value={text} style={styles.input}/>
-              <TextInput placeholder="Adicionar artigo" onChangeText={onChange} value={text} style={styles.input}/>
+              <Text style={styles.modalText}>Login </Text>
+              <TextInput placeholder="Utilizador" style={styles.inputModal}/>
+              <TextInput placeholder="Palavra-chave" secureTextEntry  style={styles.inputModal}/>
 
               <Pressable
-                style={[styles.button, styles.buttonClose]}
+                style={styles.btnModal}
                 onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Text style={styles.textStyle}>Entrar</Text>
+              </Pressable>
+              <Pressable
+                style={styles.btnModal}
+                onPress={() => [setModalVisible(!modalVisible)]}
               >
                 <Text style={styles.textStyle}>Cancelar</Text>
               </Pressable>
+              <Text style={styles.modalRegText} onPress={() => [setModalVisible(false), setModalVisibleReg(true)]}>Registar</Text>
+            </View>
+          </View>
+        </Modal>
+        {/* Modal registar  */}
+        <Modal 
+          animationType="fade"
+          transparent={true}
+          visible={modalVisibleReg}
+          onRequestClose={() => {
+            setModalVisibleReg(!modalVisibleReg);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>Registar </Text>
+              <TextInput placeholder="Utilizador"  style={styles.inputModal}/>
+              <TextInput placeholder="Palavra-chave" secureTextEntry   style={styles.inputModal}/>
+
               <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}
+                style={styles.btnModal}
+                onPress={() => setModalVisibleReg(!modalVisibleReg)}
+              >
+                <Text style={styles.textStyle}>Entrar</Text>
+              </Pressable>
+              <Pressable
+                style={styles.btnModal}
+                onPress={() => [setModalVisibleReg(!modalVisibleReg)]}
               >
                 <Text style={styles.textStyle}>Cancelar</Text>
               </Pressable>
             </View>
           </View>
         </Modal>
+
             <Pressable style={styles.loginBtn}  onPress={() => setModalVisible(true)}>
                 <Text style={styles.txt} >Aceder à conta</Text> 
             </Pressable>

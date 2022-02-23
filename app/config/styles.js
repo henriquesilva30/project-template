@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 import colors from '../config/colors';
 
 const Styles = StyleSheet.create({
@@ -32,15 +33,29 @@ input:{
   backgroundColor:colors.white,
   color:colors.black
 },
-btn: {
-  backgroundColor:colors.secondary,
+inputModal:{
+  height:40,
+  width:'100%',
   padding:10,
   margin:5,
-  width:'40%',
+  borderRadius:15,
+  fontSize:16,
+  borderWidth:2,
+  backgroundColor:colors.white,
+  color:colors.black
+},
+
+btn: {
+  flex:1,
+  backgroundColor:colors.secondary,
+  margin:5,
+  width:'50%',
   alignSelf:'center',
-  borderRadius:100,
   borderColor:colors.black,
-  borderWidth:3
+  borderWidth:2,
+  elevation: 10,
+  borderRadius: 20,
+  padding: 10,
 },
 btnText:{
   fontSize:20,
@@ -82,7 +97,7 @@ centeredView: {
   marginTop: 22
 },
 modalView: {
-  height:300,
+  height:320,
   width:300,
   opacity:1,
   margin: 20,
@@ -99,25 +114,39 @@ modalView: {
   shadowRadius: 4,
   elevation: 5
 },
-button: {
+btnModal: {
+  backgroundColor:colors.secondary,
+  margin:5,
+  alignSelf:'center',
+  borderColor:colors.black,
+  borderWidth:2,
+  elevation: 10,
   borderRadius: 20,
   padding: 10,
-  elevation: 2
-},
-buttonOpen: {
-  backgroundColor: 'green',
-},
-buttonClose: {
-  backgroundColor: 'red',
+  width:'100%',
+  height:40,
+  alignItems:'center',
 },
 textStyle: {
   color: "white",
   fontWeight: "bold",
-  textAlign: "center"
+  textAlign: "center",
 },
 modalText: {
+  color:colors.black,
+  fontSize:18,
   marginBottom: 15,
-  textAlign: "center"
+  textAlign: "center",
+},
+modalRegText: {
+  color:colors.black,
+  fontSize:14,
+  marginTop: '5%',
+  textAlign: "center",
+  justifyContent:'flex-end',
+  textDecorationLine:'underline',
+  color:colors.blue
+
 },
 listItem:{
   padding:7,

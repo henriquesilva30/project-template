@@ -12,8 +12,8 @@ const AddItem = ({title, addItem}) => {
   return (
    <View>
      
-     <TextInput mode="outlined" style={styles.input}   placeholder="Adicionar artigo" onChangeText={onChange} value={text}/>
-     <TouchableOpacity style={styles.btn} onPress={() => {addItem(text); setText('');}} >
+     <TextInput style={styles.input}   placeholder="Adicionar artigo" onChangeText={onChange} value={text}/>
+     <TouchableOpacity style={[styles.btn, styles.button]} onPress={() => {addItem(text); setText('');}} >
        <Text style={styles.btnText}>Adicionar</Text>
      </TouchableOpacity>
    </View>

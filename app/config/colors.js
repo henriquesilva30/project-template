@@ -4,5 +4,6 @@ export default {
     white:'white',
     black:'black',
     delete:'firebrick',
+    blue:'blue'
     
 }
